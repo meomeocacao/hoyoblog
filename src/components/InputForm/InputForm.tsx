@@ -4,17 +4,17 @@ import React from "react";
 import styles from "./InputForm.module.scss";
 
 interface Props {
-  value: string;
   placeholder: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   style: SxProps;
+  name: string;
 }
 
 export const InputForm = (props: Props) => (
   <Input
     placeholder={props.placeholder}
-    value={props.value}
     onChange={props.onChange}
     sx={props.style}
+    name={props.name}
   />
 );

@@ -1,0 +1,69 @@
+@mixin SearchStyle($colorBorder, $bgColor) {
+  border: 2px solid $colorBorder;
+  background-color: $bgColor;
+  padding: 2px 5px 2px 5px;
+  text-decoration: none;
+  border-radius: 30px;
+  ::placeholder {
+    color: rgb(134, 134, 134);
+  }
+}
+
+.SearchInput {
+  @include SearchStyle(#ffffff, #f1f4f9);
+}
+.SearchInputActive {
+  @include SearchStyle(#74abfd, rgb(255, 255, 255));
+}
+
+.SearchIcon {
+  align-items: center;
+  margin-bottom: -9px;
+  color: rgb(161, 161, 161);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.CancelIcon {
+  @extend .SearchIcon;
+  color: #ccc;
+}
+
+.NoUnderBorder:before {
+  border-bottom: none !important;
+}
+
+.TableSearch {
+  position: absolute;
+  margin-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 6px 4px rgb(83 83 83 / 30%);
+  border-radius: 7px;
+  width: 250px;
+  height: fit-content;
+  padding: 5px;
+  justify-content: start;
+  .TitleTable {
+    text-align: start;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  .TrendItem {
+    background-color: #3e8bff;
+    padding: 3px;
+    font-size: 12px;
+    border-radius: 10px;
+    flex: 0 0 25%;
+    margin: 10px 5px 10px 5px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .BoxHistory {
+    display: flex;
+    justify-content: space-between;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+}

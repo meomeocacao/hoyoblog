@@ -4,3 +4,8 @@ export type RegisterState = {
   email: string;
   confirmPassword: string;
 };
+
+export type RegisterForm = {
+  placeholder: string;
+  name: string;
+};

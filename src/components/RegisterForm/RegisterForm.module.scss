@@ -1,1 +1,91 @@
-.RegisterForm {}
+$textColor: #ffffff;
+$textColor2: #999db3;
+$closeColor: #939393;
+$colorShadow: #657ef8;
+$textShadow: 1px 1px 2px $colorShadow, -1px 1px 2px $colorShadow,
+  1px -1px 2px $colorShadow, -1px -1px 2px $colorShadow;
+a {
+  text-decoration: none;
+}
+@mixin textShadow($color: $colorShadow) {
+  text-shadow: 1px 1px 2px $color, -1px 1px 2px $colorShadow, 1px -1px 2px$color,
+    -1px -1px 2px $color;
+}
+.RegisterImage {
+  @include textShadow($colorShadow);
+}
+
+.CloseButton {
+  color: $closeColor;
+  text-align: end;
+  width: 100%;
+}
+
+.SmallTitle {
+  font-size: 5px;
+  font-weight: bold;
+  color: #858383;
+  text-align: center;
+}
+.Priorty {
+  font-size: 2px;
+  font-weight: bold;
+  color: $textColor2;
+}
+
+.ImageContent {
+  width: 40%;
+  top: -15%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.ImageDialog {
+  @extend .ImageContent;
+  left: 52%;
+  top: -23%;
+  width: 50%;
+  z-index: -1;
+}
+
+.TextDialog {
+  @extend .ImageContent;
+  left: 55%;
+  top: -15%;
+  width: 150px;
+  text-align: center;
+  transform: rotateZ(25deg);
+  align-items: center;
+  @include textShadow($color: $textColor);
+}
+
+.ToLogin {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  color: rgb(92, 92, 92);
+  &:hover {
+    cursor: pointer;
+  }
+  .loginTitle {
+    font-size: 12px;
+  }
+}
+.ani {
+  opacity: 1;
+  visibility: inherit;
+
+  animation: conlonngu 0.3s ease-in-out;
+}
+@keyframes conlonngu {
+  100% {
+    opacity: 0;
+
+    visibility: hidden;
+  }
+}
+
+// GIT POLIOT NOOB
