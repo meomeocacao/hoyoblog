@@ -9,6 +9,8 @@ import { SearchInput } from "../SearchInput/SearchInput";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import Avatar from "@mui/material/Avatar";
 import { MenuModal } from "./MenuModal/MenuModal";
+import { CreatePostButton } from "./CreatePost/CreatePost";
+import { NotificationIcon } from "./Notification/Notification";
 interface LinkTabProps {
   label?: string;
   href?: string;
@@ -69,22 +71,11 @@ export const NavTabs = () => {
         <SearchInput />
       </Box>
       <Box sx={{ display: "flex" }}>
-        <Box>
-          <BorderColorIcon />
-        </Box>
+        <CreatePostButton />
+        <NotificationIcon />
         <Box ref={menuBar} sx={{ marginTop: 1 }}>
-          <Avatar
-            alt="Travis Howard"
-            src="/static/images/avatar/2.jpg"
-            onClick={handleOpenMenu}
-          />
+          <MenuModal handleClose={handleClose} handleOpen={handleOpen} />
         </Box>
-
-        <MenuModal
-          isOpen={openMenu}
-          handleClose={handleClose}
-          handleOpen={handleOpen}
-        />
         <RegisterForm
           handleClose={handleClose}
           ani={activeAnimation}

@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$shadowBoxColor: #bdbdbd;
+$paddingItem: 10px 15px 10px 15px;
+$bgColorHover: #eff2ff;
+$textColorHover: rgb(85, 110, 253);
+$bgItemColorHover: rgb(202, 210, 255);
+$shadowBoxColor: #cbcbcb;
+.TitleNoti {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 40px;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  margin: 5px;
+  .IconShark {
+    margin-left: -10px;
+    margin-top: -2px;
+  }
+  .DotNoti {
+    position: absolute;
+    box-shadow: 0px 1px 3px 1px #ff6b68;
+    border-radius: 50%;
+    color: red;
+    margin-left: -15px;
+    margin-top: 10px;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $bgColorHover;
+    color: $textColorHover;
+    animation: ringBell 2s infinite;
+  }
+}
+
+.ModalNoti {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  box-shadow: 0px 1px 9px 2px $shadowBoxColor;
+  background-color: #ffffff;
+  overflow: hidden;
+  overflow-y: scroll;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 5px;
+  .ItemNoti {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    cursor: pointer;
+    align-items: center;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0;
+      height: 0;
+      background-color: $bgItemColorHover;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      transition: all 0.3s linear;
+    }
+    &:hover::before {
+      width: 450px;
+      height: 450px;
+    }
+    .IconNoti {
+      position: relative;
+      margin: 2px;
+      &:hover {
+        color: rgb(85, 110, 253);
+        animation: topDownIcon 1.5s infinite;
+      }
+    }
+    .AvatarNoti {
+      width: 25px;
+      height: 25px;
+      padding: 5px;
+      margin-right: 2px;
+      position: relative;
+    }
+    .ContentNoti {
+      padding: 2px;
+      text-align: start;
+      position: relative;
+      width: calc(100% - 70px);
+      align-items: center;
+      .TitleNotiItem {
+        font-size: 15px;
+        position: relative;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@keyframes ringBell {
+  0% {
+    transform: rotate(70deg);
+  }
+  60% {
+    transform: rotate(-70deg);
+  }
+  100% {
+    transform: rotate(70deg);
+  }
+}
+
+@keyframes topDownIcon {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}

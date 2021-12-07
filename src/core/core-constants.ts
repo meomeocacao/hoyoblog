@@ -6,7 +6,16 @@ export const REGISTER_FORM: RegisterForm[] = [
   { placeholder: "Password", name: "password" },
   { placeholder: "Confirm Password", name: "confirmPassword" },
 ];
-
+export const CREATE_POST_FORM: RegisterForm[] = [
+  {
+    placeholder: "Title",
+    name: "title",
+  },
+  {
+    placeholder: "Description",
+    name: "description",
+  },
+];
 export const POLICY_TEXT = "I have read and agree to the ";
 
 export const TERMS_OF_SERVICE_URL = "https://www.google.com";

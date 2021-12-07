@@ -44,6 +44,7 @@
   height: fit-content;
   padding: 5px;
   justify-content: start;
+  z-index: 1;
   .TitleTable {
     text-align: start;
     font-weight: bold;
@@ -66,4 +67,8 @@
     justify-content: space-between;
     animation: fadeIn 0.5s ease-in-out;
   }
+}
+.Search {
+  width: 400px;
+  height: 25px;
 }

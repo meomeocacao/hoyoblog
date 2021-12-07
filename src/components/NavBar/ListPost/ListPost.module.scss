@@ -1,0 +1,200 @@
+@import "../MenuModal/MenuModal.module.scss";
+
+$defaultButtonColor: #f5f6fb;
+$bgHoverColor: #b4fde0;
+$greenBgColor: #aedcff;
+$redBgColor: #fcd38d;
+$bgHoverColorVice: #26fca6;
+$greenBgColorVice: #27a0fd;
+$redBgColorVice: #ffac1c;
+$bgColorHover: #eff2ff;
+
+$color-map: (
+  $bgHoverColor: $bgHoverColorVice,
+  $greenBgColor: $greenBgColorVice,
+  $redBgColor: $redBgColorVice,
+  $defaultButtonColor: #a1a1a1,
+);
+
+.PostNowText {
+  text-align: start;
+}
+
+@mixin box-shadow($color) {
+  box-shadow: 0px 1px 3px 1px $color;
+}
+
+@mixin GroupIcon($bgColor: $bgHoverColor, $color: $defaultButtonColor) {
+  $shadowBoxColor: map-get(
+    $map: $color-map,
+    $key: $bgColor,
+  );
+  $bgSetColor: map-get(
+    $map: $color-map,
+    $key: $color,
+  );
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  background-color: $color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 1px 5px 2px $bgSetColor;
+  position: relative;
+  &:hover {
+    background-color: $bgColor;
+    box-shadow: 0px 1px 5px 2px $shadowBoxColor;
+
+    .ArrowIcon {
+      animation: GoGoArrow 0.5s ease-in-out infinite alternate;
+    }
+    .IconShark {
+      animation: Vibration 0.5s ease-in-out infinite alternate;
+      .IconSharkLight {
+        display: block;
+        position: absolute;
+        top: -11%;
+        left: 18%;
+        animation: Twinkle 0.5s ease-in-out infinite alternate;
+      }
+    }
+    .IconRocket {
+      animation: GoToAir 1s ease-in-out infinite alternate;
+      .IconRocketCloud {
+        display: block;
+        position: absolute;
+        color: rgb(255, 255, 255);
+        left: 15%;
+        top: 90%;
+        animation: SmallToBig2 0.5s ease-in-out infinite alternate;
+      }
+      .IconRocketGo {
+        font-size: 10px;
+        display: block;
+        position: absolute;
+        top: 85%;
+        left: 38%;
+        animation: SmallToBig 0.5s ease-in-out infinite alternate;
+        color: rgb(255, 255, 255);
+        z-index: 1;
+      }
+    }
+    .IconWhalea {
+      animation: GoToAir 1s ease-in-out infinite alternate;
+      .IconWaveWhale {
+        display: block;
+        position: absolute;
+        left: 20%;
+        top: 70%;
+        color: rgb(66, 164, 255) !important;
+        animation: SmallToBig 0.5s ease-in-out infinite alternate;
+        width: 30px;
+      }
+    }
+  }
+}
+.GroupIcons {
+  display: flex;
+  justify-content: space-between;
+  .GroupIcon1 {
+    @include GroupIcon();
+    .IconWaveWhale {
+      display: none;
+    }
+  }
+  .GroupIcon2 {
+    @include GroupIcon($greenBgColor);
+    .IconSharkLight {
+      display: none;
+    }
+  }
+  .GroupIcon3 {
+    @include GroupIcon($redBgColor);
+    .IconRocketCloud {
+      display: none;
+    }
+    .IconRocketGo {
+      display: none;
+    }
+  }
+}
+
+@keyframes GoGoArrow {
+  0% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes Vibration {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes Twinkle {
+  0% {
+    opacity: 1;
+    color: rgb(255, 98, 98);
+  }
+  50% {
+    opacity: 0;
+    color: red;
+  }
+  100% {
+    opacity: 1;
+    color: rgb(255, 46, 46);
+  }
+}
+
+@keyframes GoToAir {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes SmallToBig {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes SmallToBig2 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.LangChoose {
+  right: 0;
+}
+
+.BoxHome {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: relative;
+}

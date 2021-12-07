@@ -57,6 +57,7 @@ export const SearchInput = () => {
       const current: any = menuRef.current;
       if (current && !current.contains(event.target)) {
         setClick(false);
+        setShowCanel(false);
         setShowTable(false);
       }
     });
@@ -70,6 +71,11 @@ export const SearchInput = () => {
 
   const clickCancel = () => {
     setHistory([]);
+  };
+
+  const setSearchInput = (item: string) => {
+    setValue(item);
+    setShowCanel(true);
   };
   const showHistory = () => {
     return history.length > 1 ? (
@@ -113,7 +119,11 @@ export const SearchInput = () => {
           >
             {trending.map((item, index) => {
               return (
-                <Typography key={index} className={styles.TrendItem}>
+                <Typography
+                  key={index}
+                  className={styles.TrendItem}
+                  onClick={() => setSearchInput(item)}
+                >
                   {item}
                 </Typography>
               );
@@ -128,6 +138,7 @@ export const SearchInput = () => {
       <div className={styleInputDiv()} onClick={handleClick}>
         <SearchIcon className={`${styles.SearchIcon} `} onClick={clickSearch} />
         <InputBase
+          className={styles.Search}
           placeholder={SEARCH_PLACEHOLDER}
           value={value}
           onChange={handleChange}
