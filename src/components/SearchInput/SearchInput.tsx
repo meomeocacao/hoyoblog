@@ -134,7 +134,7 @@ export const SearchInput = () => {
     ) : null;
   };
   return (
-    <div ref={menuRef}>
+    <div ref={menuRef} className={styles.ParentDiv}>
       <div className={styleInputDiv()} onClick={handleClick}>
         <SearchIcon className={`${styles.SearchIcon} `} onClick={clickSearch} />
         <InputBase

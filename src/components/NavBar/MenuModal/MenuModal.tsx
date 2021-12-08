@@ -57,7 +57,7 @@ export const MenuModal = (props: Props) => {
   };
 
   return (
-    <Box ref={menuBar}>
+    <Box ref={menuBar} className={styles.ParentDiv}>
       <Box onClick={handleOpenMenu} className={styles.Avatar}>
         <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
       </Box>

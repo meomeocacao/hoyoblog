@@ -73,6 +73,9 @@ export const UserData: UserType[] = [
     userName: "admin",
     email: "admin@gmail.com",
     password: "admin",
+    image:
+      "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
+    lastOnline: "1 day ago",
   },
 ];
 
@@ -85,6 +88,7 @@ export const PostData: PostType[] = [
     image:
       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     user: UserData[0],
+    createAt: "2020-01-01",
   },
   {
     id: 3,
@@ -94,6 +98,7 @@ export const PostData: PostType[] = [
     image:
       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     user: UserData[0],
+    createAt: "2020-01-01",
   },
   {
     id: 4,
@@ -103,6 +108,7 @@ export const PostData: PostType[] = [
     image:
       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     user: UserData[0],
+    createAt: "2020-01-01",
   },
   {
     id: 5,
@@ -112,5 +118,6 @@ export const PostData: PostType[] = [
     image:
       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     user: UserData[0],
+    createAt: "2020-01-01",
   },
 ];

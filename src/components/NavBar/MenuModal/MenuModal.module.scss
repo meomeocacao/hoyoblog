@@ -7,6 +7,9 @@ $shadowBoxColor: #cbcbcb;
 .ItemPaddingStyle {
   padding: $paddingItem;
 }
+.ParentDiv {
+  position: relative;
+}
 
 .MenuModal {
   background-color: rgb(255, 255, 255);
@@ -14,8 +17,7 @@ $shadowBoxColor: #cbcbcb;
   padding: 10px;
   position: absolute;
   text-align: start;
-  top: 7%;
-  right: 15.5%;
+  right: 0;
   width: 350px;
   border-radius: 5px;
 }

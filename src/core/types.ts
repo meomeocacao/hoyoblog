@@ -3,6 +3,7 @@ export type PostType = {
   title: string;
   content: string;
   image: string;
+  createAt: string;
   user?: UserType;
 };
 
@@ -11,6 +12,8 @@ export type UserType = {
   userName: string;
   email: string;
   password?: string;
+  image?: string;
+  lastOnline?: string;
 };
 
 export type NotiType = {

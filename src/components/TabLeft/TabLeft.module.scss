@@ -1,0 +1,30 @@
+$defaultColor: rgb(138, 138, 138);
+$activeColor: blue;
+$defaultWeight: normal;
+$activeWeight: bold;
+
+@mixin tab-style($color: $defaultColor, $weight: $defaultWeight) {
+  color: $color;
+  background-color: aliceblue;
+  border-radius: 5px;
+  font-size: large;
+  font-family: sans-serif;
+  font-weight: $weight;
+  margin: 10px;
+  padding: 20px 5px 20px 30px;
+  text-align: start;
+  &:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+}
+
+.Parent {
+}
+.DefaultTab {
+  @include tab-style($color: $defaultColor, $weight: $defaultWeight);
+}
+
+.ActiveTab {
+  @include tab-style($color: $activeColor, $weight: $activeWeight);
+}

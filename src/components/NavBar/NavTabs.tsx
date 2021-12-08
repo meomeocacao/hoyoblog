@@ -11,6 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import { MenuModal } from "./MenuModal/MenuModal";
 import { CreatePostButton } from "./CreatePost/CreatePost";
 import { NotificationIcon } from "./Notification/Notification";
+import { Link } from "react-router-dom";
 interface LinkTabProps {
   label?: string;
   href?: string;
@@ -64,8 +65,9 @@ export const NavTabs = () => {
   return (
     <Box className={styles.NavBar}>
       <Box>
-        <LinkTab label="LOGO HOME" href="/home" />
-        LOGO HOME
+        {/* <LinkTab label="LOGO HOME" href="/" /> */}
+        <Link to="/">LOGO HOME</Link>
+        {/* LOGO HOME */}
       </Box>
       <Box className={styles.SearchInput}>
         <SearchInput />

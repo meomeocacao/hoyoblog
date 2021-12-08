@@ -16,7 +16,9 @@ import { ButtonPost } from "./ButtonPost";
 export const ButtonPostGroup = () => {
   return (
     <Box>
-      <Typography className={styles.PostNowText}>Post now ~</Typography>
+      <Box className={styles.BoxHome}>
+        <Typography className={styles.PostNowText}>Post now ~</Typography>
+      </Box>
       <Box className={styles.GroupIcons}>
         <ButtonPost
           nameGroupIcon={styles.GroupIcon1}

@@ -3,7 +3,7 @@
 $shadowBoxColor: #bdbdbd;
 $paddingItem: 10px 15px 10px 15px;
 $bgColorHover: #eff2ff;
-$textColorHover: rgb(85, 110, 253);
+$textColorHover: rgb(117, 137, 250);
 $bgItemColorHover: rgb(202, 210, 255);
 $shadowBoxColor: #cbcbcb;
 .TitleNoti {
@@ -17,6 +17,7 @@ $shadowBoxColor: #cbcbcb;
   height: 25px;
   align-items: center;
   margin: 5px;
+  position: relative;
   .IconShark {
     margin-left: -10px;
     margin-top: -2px;
