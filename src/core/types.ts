@@ -22,3 +22,8 @@ export type NotiType = {
   time: string;
   icon: string;
 };
+
+export type CreatePostType = {
+  title: string;
+  content: string;
+};

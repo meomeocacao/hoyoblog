@@ -6,6 +6,8 @@ import { PostData } from "../../../core/data";
 import { ButtonPostGroup } from "./ButtonPostGroup";
 import styles from "./ListPost.module.scss";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { PostType } from "../../../core";
+import { GetPosts } from "../../../core/Apis/api";
 
 export const ListPosts = () => {
   const listHot = ["Hot", "Featured", "New Post", "New Replies"];
@@ -15,6 +17,16 @@ export const ListPosts = () => {
     setOpenList(!openList);
   };
   const listPost = React.useRef();
+  const [listPostData, setListPostData] = React.useState<PostType[]>([]);
+
+  React.useEffect(() => {
+    const getListPost = async () => {
+      const data = await GetPosts();
+      setListPostData(data);
+    };
+    getListPost();
+  }, [listPostData]);
+
   React.useEffect(() => {
     document.addEventListener("mousedown", (event) => {
       const current: any = listPost.current;
@@ -68,7 +80,7 @@ export const ListPosts = () => {
             ) : null}
           </Box>
         </Box>
-        {PostData.map((post, index) => {
+        {listPostData.map((post, index) => {
           return (
             <Box>
               <div className={styles.AvaPost}>
@@ -80,6 +92,7 @@ export const ListPosts = () => {
                         src={post.user?.image}
                         alt=""
                         width="200px"
+                        height="200px"
                         className={styles.AvatarUser}
                       />
                     </div>
